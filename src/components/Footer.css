@@ -1,0 +1,27 @@
+.footer-container {
+  background-color: #1f2937; /* Set background color */
+  color: white; /* Set text color */
+  padding: 20px;
+  width: 100%; /* Ensure the footer takes the full width */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Ensure even spacing between items */
+  align-items: center;
+}
+
+.footer-left {
+  width: 80%; /* Occupy 80% of the width */
+  margin-left: 40px;
+}
+
+.footer-right {
+  width: 20%; /* Occupy 20% of the width */
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.social-icon {
+  margin-right: 15px;
+}

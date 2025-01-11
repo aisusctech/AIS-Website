@@ -1,0 +1,17 @@
+.gradient-text {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff671f, white, #046a38);
+  background-clip: text; /* Clips the gradient to the text */
+  -webkit-background-clip: text; /* Required for WebKit browsers (Chrome, Edge, Safari) */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+}
+
+.custom-navbar {
+  background-color: #1f2937; /* Dark background color */
+  color: white; /* White text color */
+}
+
+.custom-navbar .nav-link {
+  color: white; /* White text color for nav links */
+}

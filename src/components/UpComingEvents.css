@@ -1,0 +1,41 @@
+.upcoming-events-container {
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+.image-grid {
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing between items */
+  align-items: center;
+  margin-top: 20px;
+  width: 100%; /* Ensure the grid takes the full width */
+}
+
+.event-div {
+  width: 30%; /* Ensures each div takes up 30% of the container width */
+  height: 400px; /* Adjust the height as needed */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex; /* Make the div a flex container */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px; /* Optional: Add some margin around each div */
+  font-size: 24px;
+  text-align: center; /* Center text horizontally */
+}
+
+.event-text {
+  text-align: center; /* Center text horizontally */
+  width: 100%; /* Ensure the text container takes the full width */
+}
+
+.event-text p {
+  display: block; /* Ensure each p tag is a block element */
+  margin: 0; /* Remove default margin */
+  line-height: 1.5; /* Adjust line height as needed */
+}

@@ -1,0 +1,75 @@
+.testimonials-container {
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+.carousel {
+  background: linear-gradient(to bottom, #FF671F, white, #046A38); /* Set linear gradient background */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial {
+  background-color: transparent; /* Set background color to white */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin: 20px auto; /* Center the testimonial and add margin */
+  max-width: 600px; /* Set a max width for the testimonial */
+  color: black;
+}
+
+.testimonial p {
+  margin: 0; /* Remove default margin */
+  font-size: 18px; /* Adjust font size */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add margin below the profile section */
+}
+
+.profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Make the profile picture round */
+  margin-right: 10px; /* Add space between the picture and the info */
+}
+
+.profile-info {
+  text-align: left; /* Align text to the left */
+}
+
+.name {
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.designation {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Adjust font size */
+  color: gray; /* Set color to gray */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(1); /* Invert the color to black */
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: black; /* Set the background color of the indicators to black */
+  width: 10px; /* Set the width of the indicators */
+  height: 10px; /* Set the height of the indicators */
+  border-radius: 50%; /* Make the indicators round */
+}
+
+.carousel-indicators .active {
+  background-color: black; /* Set the background color of the active indicator to black */
+}
