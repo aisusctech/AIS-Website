@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../components/Header";
-import UpComingEvents from "../components/UpComingEvents";
-import "./Home.css";
-import Sponsor from "../components/Sponsor";
-import Testimonials from "../components/Testimonials";
-import Footer from "../components/Footer";
+import Header from "../components/header";
+import UpComingEvents from "../components/upComingEvents";
+import Sponsor from "../components/sponsor";
+import Testimonials from "../components/testimonials";
+import Footer from "../components/footer";
+import "./home.css";
 
 // create home component and use the header component
 const Home = () => {

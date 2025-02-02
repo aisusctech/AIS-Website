@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "./sections/Home";
-import Events from "./sections/Events";
+import Home from "./views";
+import Events from "./views/event";
 
 const App = () => {
   return (

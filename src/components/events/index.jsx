@@ -1,5 +1,5 @@
 import React from "react";
-import "./AllEvents.css";
+import "./events.css";
 
 const AllEvents = () => {
   return (
@@ -8,7 +8,7 @@ const AllEvents = () => {
       <div className='all-events-container'>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/diwali-1.svg'
+            src='../../assets/diwali-1.svg'
             alt='Event 1'
             className='eventpage-image'
           />
@@ -16,7 +16,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/diwali-2.svg'
+            src='../../assets/diwali-2.svg'
             alt='Event 2'
             className='eventpage-image'
           />
@@ -24,7 +24,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/holi-2.svg'
+            src='../../assets/holi-2.svg'
             alt='Event 3'
             className='eventpage-image'
           />
@@ -32,7 +32,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/diwali-1.svg'
+            src='../../assets/diwali-1.svg'
             alt='Event 4'
             className='eventpage-image'
           />
@@ -40,7 +40,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/holi-2.svg'
+            src='../../assets/holi-2.svg'
             alt='Event 5'
             className='eventpage-image'
           />
@@ -51,7 +51,7 @@ const AllEvents = () => {
       <div className='all-events-container1'>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/diwali-1.svg'
+            src='../../assets/diwali-1.svg'
             alt='Event 1'
             className='eventpage-image'
           />
@@ -59,7 +59,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/diwali-2.svg'
+            src='../../assets/diwali-2.svg'
             alt='Event 2'
             className='eventpage-image'
           />
@@ -67,7 +67,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/holi-2.svg'
+            src='../../assets/holi-2.svg'
             alt='Event 3'
             className='eventpage-image'
           />
@@ -75,7 +75,7 @@ const AllEvents = () => {
         </div>
         <div className='eventpage-div'>
           <img
-            src='/Assets/Images/diwali-1.svg'
+            src='../../assets/diwali-1.svg'
             alt='Event 4'
             className='eventpage-image'
           />

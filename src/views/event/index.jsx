@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
-import "./Event.css";
-import UpComingEvents from "../components/UpComingEvents";
-import AllEvents from "../components/AllEvents";
-import Footer from "../components/Footer";
+import Header from "../../components/header";
+import UpComingEvents from "../../components/upComingEvents";
+import AllEvents from "../../components/events";
+import Footer from "../../components/footer";
+import "./event.css";
 
 const Events = () => {
   return (

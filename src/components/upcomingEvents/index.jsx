@@ -1,5 +1,5 @@
 import React from "react";
-import "./UpComingEvents.css";
+import "./upComingEvents.css";
 
 const UpComingEvents = () => {
   return (
