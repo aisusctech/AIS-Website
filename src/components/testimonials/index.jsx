@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import "./Testimonials.css";
+import "./testimonials.css";
 
 const Testimonials = () => {
   return (

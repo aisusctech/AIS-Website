@@ -1,7 +1,7 @@
 // create a new component called Navbar
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import "./Header.css";
+import "./header.css";
 
 const Header = () => {
   return (
