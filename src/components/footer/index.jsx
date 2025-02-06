@@ -1,4 +1,10 @@
 import React from "react";
+import AISLogo from '../../assets/ais_logo.png';
+import Instagram from '../../assets/Instagram.svg';
+import Facebook from '../../assets/Facebook.svg';
+import Youtube from '../../assets/Youtube.svg';
+import Linkedin from '../../assets/LinkedIn.svg';
+import Twitter from '../../assets/Twitter.svg';
 import "./footer.css";
 
 const Footer = () => {
@@ -7,7 +13,7 @@ const Footer = () => {
       <div className='footer-content'>
         <div className='footer-left'>
           <img
-            src='/Assets/Images/ais_logo1.svg'
+            src={AISLogo}
             alt='AIS Logo'
             className='ais-logo'
             width='60px'
@@ -18,35 +24,35 @@ const Footer = () => {
           </p>
           <div className='social-icons'>
             <img
-              src='/Assets/Images/Instagram.svg'
+              src={Instagram}
               alt='Instagram'
               className='social-icon'
               width='20px'
               height='20px'
             />
             <img
-              src='/Assets/Images/Facebook.svg'
+              src={Facebook}
               alt='Facebook'
               className='social-icon'
               width='20px'
               height='20px'
             />
             <img
-              src='/Assets/Images/Youtube.svg'
+              src={Youtube}
               alt='YouTube'
               className='social-icon'
               width='20px'
               height='20px'
             />
             <img
-              src='/Assets/Images/LinkedIn.svg'
+              src={Linkedin}
               alt='LinkedIn'
               className='social-icon'
               width='20px'
               height='20px'
             />
             <img
-              src='/Assets/Images/Twitter.svg'
+              src={Twitter}
               alt='Twitter'
               className='social-icon'
               width='20px'

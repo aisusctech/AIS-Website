@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import Profile from '../../assets/profile.svg'
 import "./testimonials.css";
 
 const Testimonials = () => {
@@ -11,7 +12,7 @@ const Testimonials = () => {
           <div className='testimonial'>
             <div className='profile'>
               <img
-                src='/Assets/Images/Profile Picture.svg'
+                src={Profile}
                 alt='John Doe'
                 className='profile-picture'
               />
@@ -27,7 +28,7 @@ const Testimonials = () => {
           <div className='testimonial'>
             <div className='profile'>
               <img
-                src='/Assets/Images/Profile Picture.svg'
+                src={Profile}
                 alt='Jane Smith'
                 className='profile-picture'
               />
@@ -43,7 +44,7 @@ const Testimonials = () => {
           <div className='testimonial'>
             <div className='profile'>
               <img
-                src='/Assets/Images/Profile Picture.svg'
+                src={Profile}
                 alt='Alex Johnson'
                 className='profile-picture'
               />
