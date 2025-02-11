@@ -1,9 +1,9 @@
 import React from 'react';
 
-const About = () => {
+const Resources = () => {
     return (
         <p>Coming Soon.</p>
     )
 }
 
-export default About;
+export default Resources;

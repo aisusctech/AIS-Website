@@ -1,4 +1,7 @@
 import React from "react";
+import GaneshChaturthi from '../../assets/diwali-1.svg';
+import Diwali from '../../assets/diwali-2.svg';
+import Holi from '../../assets/holi-2.svg';
 import "./upComingEvents.css";
 
 const UpComingEvents = () => {
@@ -8,7 +11,7 @@ const UpComingEvents = () => {
       <div className='image-grid'>
         <div
           className='event-div'
-          style={{ backgroundImage: "url('/Assets/Images/diwali-1.svg')" }}
+          style={{ backgroundImage: `url(${GaneshChaturthi})` }}
         >
           <div className='event-text'>
             <p>Ganesh Chaturthi</p>
@@ -17,7 +20,7 @@ const UpComingEvents = () => {
         </div>
         <div
           className='event-div'
-          style={{ backgroundImage: "url('/Assets/Images/diwali-2.svg')" }}
+          style={{ backgroundImage: `url(${Diwali})` }}
         >
           <div className='event-text'>
             <p>Diwali</p>
@@ -26,7 +29,7 @@ const UpComingEvents = () => {
         </div>
         <div
           className='event-div'
-          style={{ backgroundImage: "url('/Assets/Images/holi-2.svg')" }}
+          style={{ backgroundImage: `url(${Holi})` }}
         >
           <div className='event-text'>
             <p>Garba</p>

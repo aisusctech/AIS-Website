@@ -1,24 +1,29 @@
 import React from "react";
+import Home from "./home";
 import Header from "../components/header";
-import UpComingEvents from "../components/upComingEvents";
-import Sponsor from "../components/sponsor";
-import Testimonials from "../components/testimonials";
 import Footer from "../components/footer";
-import "./home.css";
+import Events from "./events";
+import Resources from "./resources";
+import About from "./about";
+import Contact from "./contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// create home component and use the header component
-const Home = () => {
+const App = () => {
   return (
-    <div className='home-container'>
-      <Header />
-      <div class='background-image-div'>lorem ipsum a lot</div>
-      <UpComingEvents />
-      <div class='background-image-div1'></div>
-      <Sponsor />
-      <Testimonials />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Events" element={<Events />}></Route>
+          <Route path="/About" element={<About />}></Route>
+          <Route path="/Resources" element={<Resources />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 
-export default Home;
+export default App;

@@ -1,5 +1,5 @@
 .background-image-div2 {
-  background-image: url("Assets/Images/EventsBackground.png");
+  background-image: url("../../assets/EventsBackground.png");
   background-size: cover;
   background-position: center;
   height: 800px; /* Adjust the height as needed */
