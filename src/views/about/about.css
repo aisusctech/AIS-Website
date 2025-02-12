@@ -1,0 +1,56 @@
+.about {
+    background-color: #151515;
+    color: #E4E4E4;
+    font-family: 'Lalezar';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about .front-image {
+    width: 100%;
+}
+
+.about .title {
+    display: flex;
+    justify-content: center;
+}
+
+.about .content {
+    width: 80%;
+    font-weight: 400;
+}
+
+.about .card-wrapper, .about .card-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+}
+
+.about .card-sections {
+    margin: 25px 0;
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .card {
+    background: #1F2937;
+    border: 4px solid #E4E4E4;
+    height: 10rem;
+    width: 12rem;
+}
+
+.about .ais-alumni {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+}
+
+.about .ais-alumni img {
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
+}
