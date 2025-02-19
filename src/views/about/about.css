@@ -34,13 +34,27 @@
 
 .about .row {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .about .card {
     background: #1F2937;
     border: 4px solid #E4E4E4;
-    height: 10rem;
+    height: 12rem;
     width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .about .ais-alumni {

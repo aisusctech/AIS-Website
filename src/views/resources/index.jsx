@@ -2,7 +2,7 @@ import React from 'react';
 
 const Resources = () => {
     return (
-        <p>Coming Soon.</p>
+        <p style={{"height": "67%", "display": "flex", "justifyContent": "center", "alignItems": "center"}}>Coming Soon.</p>
     )
 }
 

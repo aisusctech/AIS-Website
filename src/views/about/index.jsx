@@ -1,419 +1,168 @@
-// import React from 'react';
-// import FrontImage from '../../assets/diwali-1.png';
-// import Card from 'react-bootstrap/Card';
-// import LinkImage from '../../assets/link.png';
-
-// import './about.css';
-
-// const About = () => {
-//     return (
-//         <div className='about'>
-//             <img src={FrontImage} className='front-image' />
-//             <div className="title">
-//                 <h1>Mission and Vision</h1>
-//             </div>
-//             <div className="content">
-//                 <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>
-//                 <p>Some more about History... lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>e-Board Fall 2024</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Tech Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Finance Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Content Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Events Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Sponsorship Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Hospitality Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="card-sections">
-//                 <div className="title">
-//                     <h1>Relations Team</h1>
-//                 </div>
-//                 <div className="row">
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                     <div className="card-wrapper">
-//                         <Card>
-//                             {/* <Card.Img variant="top" src="<Insert Source Here>" /> */}
-//                         </Card>
-//                         <h3>First Last</h3>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="ais-alumni">
-//                 Look Up AIS’ Alumni
-//                 <img src={LinkImage} />
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default About;
-
 import React, { useEffect, useState } from "react";
 import supabase from "../../supabase/supabaseConfig";
-import Card from "react-bootstrap/Card";
+import { Card, Spinner } from "react-bootstrap";
+import FrontImage from '../../assets/diwali-1.png';
+import LinkImage from '../../assets/link.png';
 import "./about.css";
 
 const About = () => {
-  const [teamMembers, setTeamMembers] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [teamMembers, setTeamMembers] = useState({});
+    const [specialSection, setSpecialSection] = useState({ topRow: [], secondRow: [] });
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchTeamMembers = async () => {
-      setLoading(true);
-      setError(null); // Reset error state
+    useEffect(() => {
+        const fetchTeamMembers = async () => {
+            setLoading(true);
+            setError(null);
 
-      const { data, error } = await supabase.from("memberDetails").select("*");
+            const { data, error } = await supabase.from("memberDetails").select("*");
 
-      if (error) {
-        console.error("Error fetching team members:", error);
-        setError("Failed to fetch team members.");
-        setLoading(false);
-        return;
-      }
+            if (error) {
+                console.error("Error fetching team members:", error);
+                setError("Failed to fetch team members.");
+                setLoading(false);
+                return;
+            }
 
-      console.log("Fetched Data:", data);
+            console.log("Fetched Data:", data);
 
-      const groupedMembers = data.reduce((acc, member) => {
-        const profileImage = member.profile || "https://via.placeholder.com/150"; 
+            const groupedMembers = data.reduce((acc, member) => {
+                const profileImage = member.profile || "https://via.placeholder.com/150";
+                let department = member.department.replace(" (Director)", "").trim();
 
-        if (!acc[member.department]) acc[member.department] = [];
-        acc[member.department].push({ name: member.name, profile: profileImage });
+                if (["AIS Vice President", "AIS President"].includes(member.department)) {
+                    acc["special"] = acc["special"] || { topRow: [], secondRow: [] };
+                    acc["special"].topRow.push({ name: member.name, profile: profileImage });
+                } else if (member.department === "President") {
+                    acc["special"] = acc["special"] || { topRow: [], secondRow: [] };
+                    acc["special"].secondRow.push({ name: member.name, profile: profileImage });
+                } else {
+                    if (!acc[department]) acc[department] = { directors: [], members: [] };
 
-        return acc;
-      }, {});
+                    if (member.department.includes("(Director)")) {
+                        acc[department].directors.push({
+                            name: member.name.includes("(Director)") ? member.name : `${member.name} (Director)`,
+                            profile: profileImage,
+                        });
+                    } else {
+                        acc[department].members.push({ name: member.name, profile: profileImage });
+                    }
+                }
 
-      setTeamMembers(groupedMembers);
-      setLoading(false);
-    };
+                return acc;
+            }, {});
 
-    fetchTeamMembers();
-  }, []);
+            Object.keys(groupedMembers).forEach((dept) => {
+                if (dept !== "special") {
+                    groupedMembers[dept].directors.sort((a, b) => a.name.localeCompare(b.name));
+                    groupedMembers[dept].members.sort((a, b) => a.name.localeCompare(b.name));
+                }
+            });
 
-  return (
-    <div className="about">
-      <div className="title">
-        <h1>Meet the Team</h1>
-      </div>
+            setSpecialSection(groupedMembers["special"] || { topRow: [], secondRow: [] });
+            delete groupedMembers["special"];
 
-      {loading ? (
-        <p>Loading team members...</p>
-      ) : error ? (
-        <p className="error">{error}</p>
-      ) : (
-        Object.entries(teamMembers).map(([department, members]) => (
-          <div key={department} className="card-sections">
+            setTeamMembers(groupedMembers);
+            setLoading(false);
+        };
+
+        fetchTeamMembers();
+    }, []);
+
+    const renderTeamSection = (department, { directors, members }) => (
+        <div key={department} className="card-sections">
             <div className="title">
-              <h1>{department} Team</h1>
+                <h1>{department} Team</h1>
             </div>
             <div className="row">
-              {members.map((member, index) => (
-                <div key={index} className="card-wrapper">
-                  <Card>
-                    <Card.Img
-                      variant="top"
-                      src={member.profile}
-                      alt={member.name}
-                      onError={(e) => (e.target.src = "https://via.placeholder.com/150")} // Fallback if image fails
-                    />
-                  </Card>
-                  <h3>{member.name}</h3>
-                </div>
-              ))}
+                {[...directors, ...members].map((member, index) => (
+                    <div key={index} className="card-wrapper">
+                        <Card>
+                            <Card.Img
+                                variant="top"
+                                src={member.profile}
+                                alt={member.name}
+                                onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
+                            />
+                        </Card>
+                        <h3>{member.name}</h3>
+                    </div>
+                ))}
             </div>
-          </div>
-        ))
-      )}
-    </div>
-  );
+        </div>
+    );
+
+    if (loading) {
+        return (
+            <div className="loading-container d-flex justify-content-center align-items-center" style={{ minHeight: "50vh" }}>
+                <Spinner animation="border" variant="light" />
+            </div>
+        );
+    }
+
+    if (error) return <p className="error">{error}</p>;
+
+    return (
+        <div className="about">
+            <img src={FrontImage} className='front-image' />
+            <div className="title">
+                <h1>Mission and Vision</h1>
+            </div>
+            <div className="content">
+                <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.</p>
+                <p>Some more about History... lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
+            </div>
+            <div className="title">
+                <h1>e-Board Fall 2024</h1>
+            </div>
+
+            {/* Special Section for AIS Vice President, AIS President, and President team */}
+            {specialSection.topRow.length > 0 || specialSection.secondRow.length > 0 ? (
+                <div className="card-sections">
+                    <div className="row">
+                        {specialSection.topRow.map((member, index) => (
+                            <div key={index} className="card-wrapper">
+                                <Card>
+                                    <Card.Img
+                                        variant="top"
+                                        src={member.profile}
+                                        alt={member.name}
+                                        onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
+                                    />
+                                </Card>
+                                <h3>{member.name}</h3>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="row">
+                        {specialSection.secondRow.map((member, index) => (
+                            <div key={index} className="card-wrapper">
+                                <Card>
+                                    <Card.Img
+                                        variant="top"
+                                        src={member.profile}
+                                        alt={member.name}
+                                        onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
+                                    />
+                                </Card>
+                                <h3>{member.name}</h3>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ) : null}
+
+            {/* Render remaining teams */}
+            {Object.keys(teamMembers)
+                .sort((a, b) => a.localeCompare(b))
+                .map((department) => renderTeamSection(department, teamMembers[department]))}
+            <div className="ais-alumni">
+                Look Up AIS’ Alumni
+                <img src={LinkImage} />
+            </div>
+        </div>
+    );
 };
 
 export default About;
