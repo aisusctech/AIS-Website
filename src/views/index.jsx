@@ -7,6 +7,7 @@ import Resources from "./resources";
 import About from "./about";
 import Contact from "./contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UploadMemberDetails from "./uploadmemberdetails";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/About" element={<About />}></Route>
           <Route path="/Resources" element={<Resources />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
+          <Route path="/Upload" element={<UploadMemberDetails />}></Route>
         </Routes>
         <Footer />
       </div>
