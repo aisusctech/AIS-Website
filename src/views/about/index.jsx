@@ -86,7 +86,7 @@ const About = () => {
                                 onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
                             />
                         </Card>
-                        <h3>{member.name}</h3>
+                        <h5>{member.name}</h5>
                     </div>
                 ))}
             </div>
@@ -114,7 +114,7 @@ const About = () => {
                 <p>Some more about History... lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </p>
             </div>
             <div className="title">
-                <h1>e-Board Fall 2024</h1>
+                <h1>e-Board Spring 2025</h1>
             </div>
 
             {/* Special Section for AIS Vice President, AIS President, and President team */}
@@ -131,7 +131,7 @@ const About = () => {
                                         onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
                                     />
                                 </Card>
-                                <h3>{member.name}</h3>
+                                <h5>{member.name}</h5>
                             </div>
                         ))}
                     </div>
@@ -146,17 +146,26 @@ const About = () => {
                                         onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
                                     />
                                 </Card>
-                                <h3>{member.name}</h3>
+                                <h5>{member.name}</h5>
                             </div>
                         ))}
                     </div>
                 </div>
             ) : null}
 
-            {/* Render remaining teams */}
-            {Object.keys(teamMembers)
-                .sort((a, b) => a.localeCompare(b))
-                .map((department) => renderTeamSection(department, teamMembers[department]))}
+            {/* Render teams in specific order */}
+            {[
+                "Tech",
+                "Finance",
+                "Content",
+                "Events",
+                "Sponsorship",
+                "Hospitality",
+                "Relations",
+            ].map((department) =>
+                teamMembers[department] ? renderTeamSection(department, teamMembers[department]) : null
+            )}
+            
             <div className="ais-alumni">
                 Look Up AIS’ Alumni
                 <img src={LinkImage} />
