@@ -1,7 +1,7 @@
 import React from "react";
-import GaneshChaturthi from '../../assets/diwali-1.svg';
-import Diwali from '../../assets/diwali-2.svg';
-import Holi from '../../assets/holi-2.svg';
+import GaneshChaturthi from "../../assets/diwali-1.svg";
+import Diwali from "../../assets/diwali-2.svg";
+import Holi from "../../assets/holi-2.svg";
 import "./upComingEvents.css";
 
 const UpComingEvents = () => {
@@ -15,7 +15,7 @@ const UpComingEvents = () => {
         >
           <div className='event-text'>
             <p>Ganesh Chaturthi</p>
-            <p>15 September 2024</p>
+            <p>27 August 2025</p>
           </div>
         </div>
         <div
@@ -24,7 +24,7 @@ const UpComingEvents = () => {
         >
           <div className='event-text'>
             <p>Diwali</p>
-            <p>15 September 2024</p>
+            <p>20 October 2025</p>
           </div>
         </div>
         <div
@@ -33,7 +33,7 @@ const UpComingEvents = () => {
         >
           <div className='event-text'>
             <p>Garba</p>
-            <p>15 September 2024</p>
+            <p>30 September 2025</p>
           </div>
         </div>
       </div>
