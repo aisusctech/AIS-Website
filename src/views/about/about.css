@@ -21,7 +21,8 @@
     font-weight: 400;
 }
 
-.about .card-wrapper, .about .card-sections {
+.about .card-wrapper,
+.about .card-sections {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,4 +68,20 @@
     margin-left: 10px;
     height: 20px;
     width: 20px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.loader {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: absolute;
+    background-color: black;
+    width: 100%;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../../supabase/supabaseConfig";
 import { Card, Spinner } from "react-bootstrap";
-import FrontImage from "../../assets/diwali-1.png";
+import FrontImage from "../../assets/about-front.jpg";
 import LinkImage from "../../assets/link.png";
 import "./about.css";
 
@@ -64,7 +64,9 @@ const About = () => {
       delete groupedMembers["special"];
 
       setTeamMembers(groupedMembers);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     };
 
     fetchTeamMembers();
@@ -101,15 +103,7 @@ const About = () => {
 
   if (loading) {
     return (
-      <div
-        className='loading-container d-flex justify-content-center align-items-center'
-        style={{ minHeight: "50vh" }}
-      >
-        <Spinner
-          animation='border'
-          variant='light'
-        />
-      </div>
+      <div className="loader"><Spinner animation="grow" role="status" /><span style={{ marginLeft: "10px" }}>Loading...</span></div>
     );
   }
 
@@ -117,10 +111,9 @@ const About = () => {
 
   return (
     <div className='about'>
-      <img
-        src={FrontImage}
-        className='front-image'
-      />
+      <div className="image-container">
+        <img src={FrontImage} className="front-image" />
+      </div>
       <div className='title'>
         <h1>Mission and Vision</h1>
       </div>

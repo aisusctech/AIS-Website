@@ -3,6 +3,23 @@
   padding: 50px 0; /* Padding for top and bottom */
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.loader {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  color: white;
+}
+
 .contact-form-container {
   background-color: #1f2937; /* Slightly lighter dark background */
   padding: 30px;

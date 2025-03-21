@@ -9,3 +9,19 @@
   color: black;
   font-weight: bold;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.home-container .loader {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  position: absolute;
+  background-color: black;
+  width: 100%;
+}

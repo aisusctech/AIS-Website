@@ -9,9 +9,14 @@
 
 .custom-navbar {
   background-color: #1f2937; /* Dark background color */
-  color: white; /* White text color */
 }
 
 .custom-navbar .nav-link {
-  color: white; /* White text color for nav links */
+  color: #8A8A8A; /* White text color for nav links */
+}
+
+
+
+.nav-link:hover {
+  color: white !important;
 }

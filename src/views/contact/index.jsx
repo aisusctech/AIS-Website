@@ -1,6 +1,5 @@
-import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Form, Button, Spinner } from "react-bootstrap";
 import Holi from "../../assets/Holi.png";
 import Instagram from "../../assets/Instagram.svg";
 import Facebook from "../../assets/Facebook.svg";
@@ -10,11 +9,22 @@ import Twitter from "../../assets/Twitter.svg";
 import "./Contact.css";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <Container
       fluid
-      className='p-0'
+      className={`p-0 ${loading ? 'no-scroll' : ''}`}
     >
+      {
+      loading && <div className="loader"><Spinner animation="grow" role="status" /><span style={{marginLeft: "10px"}}>Loading...</span></div>
+      }
       <Row
         className='align-items-center justify-content-center text-center g-0 mb-0'
         style={{
