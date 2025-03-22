@@ -20,11 +20,17 @@ const Contact = () => {
   return (
     <Container
       fluid
-      className={`p-0 ${loading ? 'no-scroll' : ''}`}
+      className={`p-0 ${loading ? "no-scroll" : ""}`}
     >
-      {
-      loading && <div className="loader"><Spinner animation="grow" role="status" /><span style={{marginLeft: "10px"}}>Loading...</span></div>
-      }
+      {loading && (
+        <div className='loader'>
+          <Spinner
+            animation='grow'
+            role='status'
+          />
+          <span style={{ marginLeft: "10px" }}>Loading...</span>
+        </div>
+      )}
       <Row
         className='align-items-center justify-content-center text-center g-0 mb-0'
         style={{
@@ -64,36 +70,71 @@ const Contact = () => {
             Follow us on
           </h5>
           <div className='d-flex justify-content-center gap-3'>
-            <img
-              src={Instagram}
-              alt='Instagram'
-              className='social-icon'
-              style={{ width: "50px", height: "50px" }}
-            />
-            <img
-              src={Facebook}
-              alt='Facebook'
-              className='social-icon'
-              style={{ width: "50px", height: "50px" }}
-            />
-            <img
-              src={Youtube}
-              alt='YouTube'
-              className='social-icon'
-              style={{ width: "50px", height: "50px" }}
-            />
-            <img
-              src={Linkedin}
-              alt='LinkedIn'
-              className='social-icon'
-              style={{ width: "50px", height: "50px" }}
-            />
-            <img
-              src={Twitter}
-              alt='Twitter'
-              className='social-icon'
-              style={{ width: "50px", height: "50px" }}
-            />
+            <a
+              href='https://www.instagram.com/aisusc/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img
+                src={Instagram}
+                alt='Instagram'
+                className='social-icon'
+                width='55px'
+                height='55px'
+              />
+            </a>
+            <a
+              href='https://www.facebook.com/usc/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img
+                src={Facebook}
+                alt='Facebook'
+                className='social-icon'
+                width='55px'
+                height='55px'
+              />
+            </a>
+            <a
+              href='https://www.youtube.com/user/USC'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img
+                src={Youtube}
+                alt='YouTube'
+                className='social-icon'
+                width='55px'
+                height='55px'
+              />
+            </a>
+            <a
+              href='https://www.linkedin.com/groups/13693061/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img
+                src={Linkedin}
+                alt='LinkedIn'
+                className='social-icon'
+                width='55px'
+                height='55px'
+              />
+            </a>
+            <a
+              href='https://x.com/usc'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img
+                src={Twitter}
+                alt='Twitter'
+                className='social-icon'
+                width='55px'
+                height='55px'
+              />
+            </a>
           </div>
         </Col>
       </Row>

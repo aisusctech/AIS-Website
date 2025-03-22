@@ -1,5 +1,6 @@
 import React from "react";
-import AISLogo from "../../assets/ais_logo.png";
+import { Link } from "react-router-dom";
+import AISLogo from "../../assets/ais_logo.svg";
 import Instagram from "../../assets/Instagram.svg";
 import Facebook from "../../assets/Facebook.svg";
 import Youtube from "../../assets/Youtube.svg";
@@ -32,8 +33,8 @@ const Footer = () => {
                 src={Instagram}
                 alt='Instagram'
                 className='social-icon'
-                width='20px'
-                height='20px'
+                width='35px'
+                height='35px'
               />
             </a>
             <a
@@ -45,8 +46,8 @@ const Footer = () => {
                 src={Facebook}
                 alt='Facebook'
                 className='social-icon'
-                width='20px'
-                height='20px'
+                width='35px'
+                height='35px'
               />
             </a>
             <a
@@ -58,8 +59,8 @@ const Footer = () => {
                 src={Youtube}
                 alt='YouTube'
                 className='social-icon'
-                width='20px'
-                height='20px'
+                width='35px'
+                height='35px'
               />
             </a>
             <a
@@ -71,8 +72,8 @@ const Footer = () => {
                 src={Linkedin}
                 alt='LinkedIn'
                 className='social-icon'
-                width='20px'
-                height='20px'
+                width='35px'
+                height='35px'
               />
             </a>
             <a
@@ -84,14 +85,19 @@ const Footer = () => {
                 src={Twitter}
                 alt='Twitter'
                 className='social-icon'
-                width='20px'
-                height='20px'
+                width='35px'
+                height='35px'
               />
             </a>
           </div>
         </div>
         <div className='footer-right'>
-          <p>Email Us!</p>
+          <a
+            href='/Contact'
+            className='footer-link no-style'
+          >
+            <p>Email Us!</p>
+          </a>
           <p>Join our newsletter</p>
           <p>Privacy Policy</p>
         </div>
