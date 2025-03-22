@@ -29,7 +29,7 @@
   text-align: center;
 }
 
-.blur-bg {
+.mask-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -37,8 +37,22 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: blur(4px);
   transform: scale(1.1);
+  background-repeat: no-repeat;
+  background-size: cover; /* Resize the image to cover the entire container */
+  background-position: center; /* Center the image */
+}
+
+.event-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../../assets/diwali-1.svg");
+}
+
+.event-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../../assets/diwali-2.svg");
+}
+
+.event-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../../assets/holi-2.svg");
 }
 
 .event-text {
