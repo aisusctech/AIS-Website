@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { PlusCircle, DashCircle } from "react-bootstrap-icons";
 import "./resources.css";
+import { OIS_HOMEPAGE, USC_HOUSING_LINK_1, USC_HOUSING_LINK_2 } from "../../constants/constant";
 
 const Resources = () => {
   const [loading, setLoading] = useState(true);
@@ -82,28 +83,16 @@ const Resources = () => {
         <h1 className="resources-title">Additional Resources</h1>
         <div className="resources-grid">
           <div className="resource-item">
-            <strong>Lorem ipsum</strong>
-            <p>Lorem ipsum lorem ipsum</p>
+            <strong>USC Housing Resource 1</strong>
+            <a href={USC_HOUSING_LINK_1} target="_blank">More Info</a>
           </div>
           <div className="resource-item">
-            <strong>Lorem ipsum</strong>
-            <p>Lorem ipsum lorem ipsum</p>
+            <strong>USC Housing Resource 2</strong>
+            <a href={USC_HOUSING_LINK_2} target="_blank">More Info</a>
           </div>
           <div className="resource-item">
-            <strong>Lorem ipsum</strong>
-            <p>Lorem ipsum lorem ipsum</p>
-          </div>
-          <div className="resource-item">
-            <strong>Lorem ipsum</strong>
-            <p>Lorem ipsum lorem ipsum</p>
-          </div>
-          <div className="resource-item">
-            <strong>Lorem ipsum</strong>
-            <p>Lorem ipsum lorem ipsum</p>
-          </div>
-          <div className="resource-item">
-            <strong>Lorem ipsum</strong>
-            <p>Lorem ipsum lorem ipsum</p>
+            <strong>OIS Homepage</strong>
+            <a href={OIS_HOMEPAGE} target="_blank">More Info</a>
           </div>
         </div>
       </div>

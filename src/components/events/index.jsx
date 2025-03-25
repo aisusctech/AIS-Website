@@ -1,10 +1,10 @@
 import React from "react";
-import GaneshChathurti from '../../assets/diwali-1.svg';
-import Diwali from '../../assets/diwali-2.svg';
-import Holi from '../../assets/holi-2.svg';
-import Garba from '../../assets/diwali-1.svg';
-import DPSCoc from '../../assets/holi-2.svg';
-import Janmashtami from '../../assets/diwali-1.svg';
+import GaneshChathurti from '../../assets/ganeshChaturthi.svg';
+import Diwali from '../../assets/diwali.jpg';
+import Holi from '../../assets/holi.jpg';
+import Garba from '../../assets/garba.jpg';
+import DPSCoc from '../../assets/holi.jpg';
+import Janmashtami from '../../assets/holi.jpg';
 import "./events.css";
 
 const AllEvents = () => {
@@ -44,17 +44,8 @@ const AllEvents = () => {
           />
           <p>Garba</p>
         </div>
-        <div className='eventpage-div'>
-          <img
-            src={DPSCoc}
-            alt='Event 5'
-            className='eventpage-image'
-          />
-          <p>DPS - Chat Over Chaat</p>
-        </div>
       </div>
-
-      <div className='all-events-container1'>
+      {/* <div className='all-events-container1'>
         <div className='eventpage-div'>
           <img
             src={Janmashtami}
@@ -79,15 +70,7 @@ const AllEvents = () => {
           />
           <p>TBD</p>
         </div>
-        <div className='eventpage-div'>
-          <img
-            src={Janmashtami}
-            alt='Event 4'
-            className='eventpage-image'
-          />
-          <p>TBD</p>
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 };

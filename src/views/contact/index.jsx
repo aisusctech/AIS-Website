@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button, Spinner } from "react-bootstrap";
-import Holi from "../../assets/Holi.png";
+import Holi from "../../assets/holi.jpg";
 import Instagram from "../../assets/Instagram.svg";
 import Facebook from "../../assets/Facebook.svg";
 import Youtube from "../../assets/Youtube.svg";
