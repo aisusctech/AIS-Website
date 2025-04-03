@@ -20,9 +20,9 @@ const Home = () => {
       {
       loading && <div className="loader"><Spinner animation="grow" role="status" /><span style={{marginLeft: "10px"}}>Loading...</span></div>
       }
-      <div class='background-image-div'><p>Celebrating Culture, Connecting Communities!</p></div>
+      <div className='background-image-div'><p>Celebrating Culture, Connecting Communities!</p></div>
       <UpComingEvents />
-      <div class='background-image-div1'></div>
+      <div className='background-image-div1'></div>
       <Sponsor />
       <Testimonials />
     </div>

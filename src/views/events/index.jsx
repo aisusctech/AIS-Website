@@ -18,7 +18,7 @@ const Events = () => {
       {
         loading && <div className="loader"><Spinner animation="grow" role="status" /><span style={{ marginLeft: "10px" }}>Loading...</span></div>
       }
-      <div class='background-image-div2'></div>
+      <div className='background-image-div2'></div>
       <UpComingEvents />
       <AllEvents />
     </div>

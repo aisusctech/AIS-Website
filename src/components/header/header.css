@@ -12,11 +12,16 @@
 }
 
 .custom-navbar .nav-link {
-  color: #8A8A8A; /* White text color for nav links */
+  color: #8A8A8A; /* Default color for nav links */
+  transition: color 0.3s ease; /* Smooth transition for hover and active states */
 }
 
+.custom-navbar .nav-link:hover {
+  color: white !important; /* Change color on hover */
+}
 
-
-.nav-link:hover {
-  color: white !important;
+.custom-navbar .nav-link.active {
+  color: white !important; /* Highlight the active tab */
+  font-weight: bold; /* Optional: Make the active tab bold */
+  border-bottom: 2px solid white; /* Optional: Add an underline to the active tab */
 }

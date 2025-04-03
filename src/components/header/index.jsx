@@ -1,10 +1,18 @@
-// create a new component called Navbar
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 import Logo from '../../assets/ais_logo.svg';
 import "./header.css";
 
 const Header = () => {
+  const location = useLocation();
+  const [selectedTab, setSelectedTab] = useState(location.pathname);
+
+  const onTabChange = (eventKey) => {
+    console.log(eventKey);
+    setSelectedTab(eventKey);
+  }
+
   return (
     <>
       <Navbar
@@ -13,7 +21,7 @@ const Header = () => {
         className='custom-navbar'
       >
         <Container>
-          <Navbar.Brand href='#home'>
+          <Navbar.Brand as={Link} to='/'>
             <img
               src={Logo}
               width='40'
@@ -25,12 +33,12 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='ms-auto'>
-              <Nav.Link href='/'>Home</Nav.Link>
-              <Nav.Link href='/Events'>Events</Nav.Link>
-              <Nav.Link href='/Resources'>Resources</Nav.Link>
-              <Nav.Link href='/About'>About</Nav.Link>
-              <Nav.Link href='/Contact'>Contact Us</Nav.Link>
+            <Nav className='ms-auto' activeKey={selectedTab} onSelect={onTabChange}>
+              <Nav.Link as={Link} to='/' eventKey="/">Home</Nav.Link>
+              <Nav.Link as={Link} to='/Events' eventKey="/Events">Events</Nav.Link>
+              <Nav.Link as={Link} to='/Resources' eventKey="/Resources">Resources</Nav.Link>
+              <Nav.Link as={Link} to='/About' eventKey="/About">About</Nav.Link>
+              <Nav.Link as={Link} to='/Contact' eventKey="/Contact">Contact Us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
