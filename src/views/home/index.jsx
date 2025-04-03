@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import UpComingEvents from "@/components/upComingEvents";
-import Sponsor from "@/components/sponsor";
-import Testimonials from "@/components/testimonials";
+import UpComingEvents from "../../components/upComingEvents";
+import Sponsor from "../../components/sponsor";
+import Testimonials from "../../components/testimonials";
 import Spinner from 'react-bootstrap/Spinner';
 import "./home.css";
 
