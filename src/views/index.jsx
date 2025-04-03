@@ -8,7 +8,7 @@ import About from "./about";
 import Contact from "./contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UploadMemberDetails from "./uploadmemberdetails";
-import { Analytics } from '@vercel/analytics/vue';
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   return (
