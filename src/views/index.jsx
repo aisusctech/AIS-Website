@@ -8,6 +8,7 @@ import About from "./about";
 import Contact from "./contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UploadMemberDetails from "./uploadmemberdetails";
+import { Analytics } from '@vercel/analytics/vue';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Upload" element={<UploadMemberDetails />}></Route>
         </Routes>
+        <Analytics />
         <Footer />
       </div>
     </BrowserRouter>
