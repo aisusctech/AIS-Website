@@ -1,8 +1,9 @@
 import React from "react";
-import Gradly from '../../assets/Gradly.svg';
-import Tripalink from '../../assets/Tripalink.svg';
-import EasyTransfer from '../../assets/EasyTransfer.svg';
-import Weee from '../../assets/Weee.svg';
+import Gradly from '../../assets/Gradly.png';
+import Wee from '../../assets/Wee.png';
+import EasyTransfer from '../../assets/EasyTransfer.png';
+import RadioEvents from '../../assets/RadioEvents.png';
+import BIH from '../../assets/BIH.png';
 import "./sponsor.css";
 
 const Sponsor = () => {
@@ -16,31 +17,32 @@ const Sponsor = () => {
             src={Gradly}
             alt='Sponsor 1'
             className='sponsor-image'
-            style={{ width: "126px", height: "60px" }}
-          />
-          <img
-            src={Tripalink}
-            alt='Sponsor 1'
-            className='sponsor-image'
-            style={{ width: "686px", height: "160px" }}
           />
         </div>
         <div className='sponsor-div'>
           <div className='inner-div'>BRONZE</div>
           <img
-            src={EasyTransfer}
+            src={Wee}
             alt='Sponsor 1'
             className='sponsor-image'
-            style={{ width: "686px", height: "160px" }}
+          />
+          <img
+            src={EasyTransfer}
+            alt='Sponsor 2'
+            className='sponsor-image'
           />
         </div>
         <div className='sponsor-div'>
-          <div className='inner-div'>GROCERY PARTNER</div>
+          <div className='inner-div'>MEDIA PARTNER</div>
           <img
-            src={Weee}
+            src={RadioEvents}
             alt='Sponsor 1'
             className='sponsor-image'
-            style={{ width: "686px", height: "160px" }}
+          />
+          <img
+            src={BIH}
+            alt='Sponsor 2'
+            className='sponsor-image'
           />
         </div>
       </div>
