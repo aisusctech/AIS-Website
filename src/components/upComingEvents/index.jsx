@@ -10,21 +10,21 @@ const UpComingEvents = () => {
           <div className='mask-bg event-1'></div>
           <div className='event-text'>
             <p>Ganesh Chaturthi</p>
-            <p>27 August 2025</p>
-          </div>
-        </div>
-        <div className='event-div'>
-          <div className='mask-bg event-2'></div>
-          <div className='event-text'>
-            <p>Diwali</p>
-            <p>20 October 2025</p>
+            <p>06 September 2025</p>
           </div>
         </div>
         <div className='event-div'>
           <div className='mask-bg event-3'></div>
           <div className='event-text'>
             <p>Garba</p>
-            <p>30 September 2025</p>
+            <p>26 September 2025</p>
+          </div>
+        </div>
+        <div className='event-div'>
+          <div className='mask-bg event-2'></div>
+          <div className='event-text'>
+            <p>Diwali</p>
+            <p>19 October 2025</p>
           </div>
         </div>
       </div>
