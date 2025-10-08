@@ -30,7 +30,7 @@ export default function ContactStrip() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
           {/* Newsletter */}
           <div className="flex-1">
-            <h3 className="text-sm font-light tracking-wider uppercase text-gray-300 mb-3">Stay Updated</h3>
+            <h3 className="text-sm font-light tracking-wider  text-gray-300 mb-3">Join Newsletter</h3>
             <div className="flex gap-2 max-w-md">
               <input
                 type="email"

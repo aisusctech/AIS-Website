@@ -1,7 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import EBoardPage from "./pages/EBoardPage";
 import ResourcesPage from "./pages/ResourcesPage";
@@ -18,7 +17,6 @@ export default function App() {
           <Route path="/resources" element={<ResourcesPage />} />
         </Routes>
         <ContactStrip/>
-        {/* <Footer /> */}
       </div>
     </Router>
   );
