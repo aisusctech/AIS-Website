@@ -50,7 +50,7 @@ const EventsCarousel = forwardRef(function EventsCarousel({ events }, ref) {
                     <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
                     
                     {/* Content */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 ">
                       <h3 className="text-6xl font-extralight text-white mb-4 tracking-tight">
                         {e.name}
                       </h3>
