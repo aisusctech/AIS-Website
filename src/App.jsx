@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/resources" element={<ResourcesPage />} />
         </Routes>
         <ContactStrip/>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
