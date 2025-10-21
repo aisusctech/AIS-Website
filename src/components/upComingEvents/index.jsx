@@ -24,7 +24,7 @@ const UpComingEvents = () => {
           <div className='mask-bg event-2'></div>
           <div className='event-text'>
             <p>Diwali</p>
-            <p>19 October 2025</p>
+            <p>01 November 2025</p>
           </div>
         </div>
       </div>
