@@ -1,5 +1,5 @@
 import React from "react";
-import gradly from "../assets/gradly.png";
+import gradly from "../assets/wee.png";
 import wee from "../assets/wee.png";
 import easyTransfer from "../assets/easyTransfer.png";
 import radioEvents from "../assets/radioEvents.png";
