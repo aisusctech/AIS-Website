@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Calendar, MapPin, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import holiImg from "../assets/img7.jpg";
 import diwaliImg from "../assets/img2.jpg";
 import garbhaImg from "../assets/img6.jpg";
 import ganeshaImg from "../assets/img5.svg";
+import SponsorsGrid from "../components/SponsorsGrid";
 
 // Import your collage
 import collage from "../assets/hero-image.png";
@@ -41,40 +43,56 @@ const testimonials = [
 const events = [
   {
     id: 1,
+    slug: "diwali",
     name: "Diwali",
     description: "Festival of Lights celebration with traditional performances and festivities.",
     date: "Nov, 2025",
     location: "USC McCarthy Quad",
-    image: diwaliImg
+    image: diwaliImg,
+    isUpcoming: false
   },
   {
     id: 2,
+    slug: "holi",
     name: "Holi",
     description: "Festival of Colors bringing the campus together in vibrant celebration.",
     date: "March, 2026",
     location: "USC McCarthy Quad",
-    image: holiImg
+    image: holiImg,
+    isUpcoming: true
   },
   {
     id: 3,
+    slug: "ganesha-chaturthi",
     name: "Ganesha Chaturthi",
     description: "Showcasing India's diverse culture through dance, music, and cuisine.",
     date: "August, 2026",
     location: "Bovard Auditorium",
-    image: ganeshaImg
+    image: ganeshaImg,
+    isUpcoming: false
   },
   {
     id: 4,
+    slug: "navratri-garba",
     name: "Navratri & Garba Night",
     description: "Traditional dance night celebrating the spirit of Navratri.",
     date: "September, 2026",
     location: "USC McCarthy Quad",
-    image: garbhaImg
+    image: garbhaImg,
+    isUpcoming: false
   }
 ];
 
+// Sort events to show upcoming events first
+const sortedEvents = [...events].sort((a, b) => {
+  if (a.isUpcoming && !b.isUpcoming) return -1;
+  if (!a.isUpcoming && b.isUpcoming) return 1;
+  return 0;
+});
+
 export default function AISHomepage() {
   const [currentEvent, setCurrentEvent] = useState(0);
+  const navigate = useNavigate();
   const eventsRef = useRef(null);
   const testimonialsRef = useRef(null);
   const contactRef = useRef(null);
@@ -82,7 +100,7 @@ export default function AISHomepage() {
   // Events auto-scroll
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentEvent((prev) => (prev + 1) % events.length);
+      setCurrentEvent((prev) => (prev + 1) % sortedEvents.length);
     }, 6000);
     return () => clearInterval(interval);
   }, []);
@@ -93,6 +111,10 @@ export default function AISHomepage() {
 
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleEventClick = (slug) => {
+    navigate(`/events/${slug}`);
   };
 
   return (
@@ -162,16 +184,19 @@ export default function AISHomepage() {
                 className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${currentEvent * 100}%)` }}
               >
-                {events.map((event) => (
+                {sortedEvents.map((event) => (
                   <div key={event.id} className="w-full shrink-0 px-2">
-                    <div className="relative h-[450px] rounded-2xl overflow-hidden">
+                    <div 
+                      className="relative h-[450px] rounded-2xl overflow-hidden cursor-pointer group"
+                      onClick={() => handleEventClick(event.slug)}
+                    >
                       {/* Background Image */}
                       <img
                         src={event.image}
                         alt={event.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/20" />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300" />
 
                       {/* Info Box on Right */}
                       <div className="absolute right-8 top-1/2 -translate-y-1/2 backdrop-blur-xl bg-white/10 rounded-3xl p-12 md:p-16 shadow-2xl rounded-2xl p-8 max-w-md shadow-xl">
@@ -191,8 +216,11 @@ export default function AISHomepage() {
                             {event.location}
                           </span>
                         </div>
-                        <button className="w-full px-6 py-3 text-white border text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition-all duration-300 rounded-lg rounded-full">
-                          Join Waitlist
+                        <button 
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-full px-6 py-3 text-white border text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition-all duration-300 rounded-lg rounded-full"
+                        >
+                          {event.isUpcoming ? 'Register Now' : 'Join Waitlist'}
                         </button>
                       </div>
                     </div>
@@ -203,14 +231,14 @@ export default function AISHomepage() {
 
             {/* Simple Arrow Navigation */}
             <button
-              onClick={() => setCurrentEvent((prev) => (prev - 1 + events.length) % events.length)}
+              onClick={() => setCurrentEvent((prev) => (prev - 1 + sortedEvents.length) % sortedEvents.length)}
               className="absolute left-0 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-300 z-20"
               aria-label="Previous event"
             >
               <ChevronLeft size={48} strokeWidth={1.5} />
             </button>
             <button
-              onClick={() => setCurrentEvent((prev) => (prev + 1) % events.length)}
+              onClick={() => setCurrentEvent((prev) => (prev + 1) % sortedEvents.length)}
               className="absolute right-0 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-300 z-20"
               aria-label="Next event"
             >
@@ -219,7 +247,7 @@ export default function AISHomepage() {
 
             {/* Dots */}
             <div className="flex justify-center mt-8 gap-2">
-              {events.map((_, idx) => (
+              {sortedEvents.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentEvent(idx)}
@@ -231,6 +259,8 @@ export default function AISHomepage() {
           </div>
         </div>
       </section>
+
+      <SponsorsGrid />
 
       {/* Testimonials Section */}
       <section ref={testimonialsRef} className="py-24 bg-gray-50">
