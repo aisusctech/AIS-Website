@@ -8,9 +8,9 @@ import bih from "../assets/BIH.png";
 const SPONSORS = [
   { name: "Gradly", badge: "Platinum Sponsor", logo: gradly, url: "https://gradly.us/", size: "large" },
   { name: "Wee", badge: "Bronze Sponsor", logo: wee, url: "http://sayweee.com/en", size: "medium" },
-  { name: "Easy Transfer", badge: "Bronze Sponsor", logo: easyTransfer, url: "https://www.easytransferglobal.com/", size: "medium" },
+  // { name: "Easy Transfer", badge: "Bronze Sponsor", logo: easyTransfer, url: "https://www.easytransferglobal.com/", size: "medium" },
   { name: "Radio Events", badge: "Media Sponsor", logo: radioEvents, url: "https://www.radio5events.com/", size: "small" },
-  { name: "BIH", badge: "Media Sponsor", logo: bih, url: "https://www.instagram.com/bihevents/", size: "small" },
+  // { name: "BIH", badge: "Media Sponsor", logo: bih, url: "https://www.instagram.com/bihevents/", size: "small" },
 ];
 
 export default function SponsorsGrid() {
