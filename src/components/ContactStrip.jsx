@@ -118,7 +118,7 @@ export default function ContactStrip() {
             </SocialIcon>
 
             {/* Email */}
-            <SocialIcon href="mailto:tech@aisusc.org" label="Email us">
+            <SocialIcon href="mailto:relations@aisusc.org" label="Email us">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2">
                 <rect x="2" y="4" width="20" height="16" rx="2"/>
                 <path d="M2 6l10 7 10-7"/>
@@ -132,8 +132,8 @@ export default function ContactStrip() {
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-light">
           <p>© 2026 AIS USC. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="mailto:tech@aisusc.org" className="hover:text-white transition-colors">
-              tech@aisusc.org
+            <a href="mailto:relations@aisusc.org" className="hover:text-white transition-colors">
+              relations@aisusc.org
             </a>
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
