@@ -9,20 +9,29 @@ import teamEvents from "../assets/team-events.jpeg";
 import teamRelations from "../assets/team-relation.jpeg";
 import teamSponsorship from "../assets/team-sponsor.jpeg";
 import teamHospi from "../assets/team-hospi.jpeg";
+import { Helmet } from "react-helmet-async";
 
 function loadBoardGallery() {
   const imageModules = import.meta.glob(
-    '/public/gallery/board/**/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}',
-    { eager: true, as: 'url' }
+    "/public/gallery/board/**/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}",
+    { eager: true, as: "url" },
   );
   const videoModules = import.meta.glob(
-    '/public/gallery/board/**/*.{mp4,mov,avi,MP4,MOV,AVI}',
-    { eager: true, as: 'url' }
+    "/public/gallery/board/**/*.{mp4,mov,avi,MP4,MOV,AVI}",
+    { eager: true, as: "url" },
   );
 
   const items = [
-    ...Object.entries(imageModules).map(([path, url]) => ({ url, type: 'image', path })),
-    ...Object.entries(videoModules).map(([path, url]) => ({ url, type: 'video', path })),
+    ...Object.entries(imageModules).map(([path, url]) => ({
+      url,
+      type: "image",
+      path,
+    })),
+    ...Object.entries(videoModules).map(([path, url]) => ({
+      url,
+      type: "video",
+      path,
+    })),
   ];
 
   return items;
@@ -34,14 +43,46 @@ export default function EBoardPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const teams = [
-    { name: "President Team",    description: "Leading the organization's vision and strategy.",  image: teamPres        },
-    { name: "Finance Team",      description: "Managing budgets and financial operations.",        image: teamFinance     },
-    { name: "Tech Team",         description: "Building and maintaining our digital presence.",    image: teamTech        },
-    { name: "Content Team",      description: "Creating engaging content and communications.",     image: teamContent     },
-    { name: "Events Team",       description: "Planning and executing memorable experiences.",     image: teamEvents      },
-    { name: "Relations Team",    description: "Building community and external partnerships.",     image: teamRelations   },
-    { name: "Sponsorship Team",  description: "Securing partnerships and funding.",                image: teamSponsorship },
-    { name: "Hospitality Team",  description: "Ensuring comfort and care for all participants.",   image: teamHospi       },
+    {
+      name: "President Team",
+      description: "Leading the organization's vision and strategy.",
+      image: teamPres,
+    },
+    {
+      name: "Finance Team",
+      description: "Managing budgets and financial operations.",
+      image: teamFinance,
+    },
+    {
+      name: "Tech Team",
+      description: "Building and maintaining our digital presence.",
+      image: teamTech,
+    },
+    {
+      name: "Content Team",
+      description: "Creating engaging content and communications.",
+      image: teamContent,
+    },
+    {
+      name: "Events Team",
+      description: "Planning and executing memorable experiences.",
+      image: teamEvents,
+    },
+    {
+      name: "Relations Team",
+      description: "Building community and external partnerships.",
+      image: teamRelations,
+    },
+    {
+      name: "Sponsorship Team",
+      description: "Securing partnerships and funding.",
+      image: teamSponsorship,
+    },
+    {
+      name: "Hospitality Team",
+      description: "Ensuring comfort and care for all participants.",
+      image: teamHospi,
+    },
   ];
 
   useEffect(() => {
@@ -70,18 +111,55 @@ export default function EBoardPage() {
 
   return (
     <main className="pt-24 pb-20 px-12 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <Helmet>
+        <title>Executive Board 2026 | AIS USC</title>
+        <meta
+          name="description"
+          content="Meet the AIS USC Executive Board of 2026 — the student leaders driving culture, community, and connection for Indian students at the University of Southern California."
+        />
 
+        {/* Open Graph */}
+        <meta property="og:title" content="Executive Board 2026 | AIS USC" />
+        <meta
+          property="og:description"
+          content="Meet the AIS USC Executive Board of 2026 — student leaders driving culture and community at USC."
+        />
+        <meta
+          property="og:image"
+          content="https://www.aisusc.com/ais_logo_png.png"
+        />
+        <meta property="og:url" content="https://www.aisusc.com/eboard" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Executive Board 2026 | AIS USC" />
+        <meta
+          name="twitter:description"
+          content="Meet the AIS USC Executive Board of 2026 — student leaders driving culture and community at USC."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.aisusc.com/ais_logo_png.png"
+        />
+      </Helmet>
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <div className="text-xs tracking-wider uppercase text-gray-500 mb-3 font-light">Leadership</div>
+          <div className="text-xs tracking-wider uppercase text-gray-500 mb-3 font-light">
+            Leadership
+          </div>
           <h1 className="text-5xl font-light">Executive Board 2026</h1>
         </div>
 
         {/* Hero image */}
         <div className="mb-12">
           <div className="aspect-[2.5/1] bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center rounded overflow-hidden">
-            <img src={img3} className="w-full h-full object-cover" alt="Executive Board" />
+            <img
+              src={img3}
+              className="w-full h-full object-cover"
+              alt="Executive Board"
+            />
           </div>
         </div>
 
@@ -103,9 +181,15 @@ export default function EBoardPage() {
         {/* Gallery section — only renders if images are found in public/gallery/board/ */}
         {gallery.length > 0 && (
           <div>
-            <div className="text-xs tracking-wider uppercase text-gray-500 mb-3 font-light">Memories</div>
-            <h2 className="text-4xl font-extralight text-gray-900 mb-3 tracking-tight">Board Gallery</h2>
-            <p className="text-gray-500 font-light mb-10">Behind the scenes with your 2026 executive board</p>
+            <div className="text-xs tracking-wider uppercase text-gray-500 mb-3 font-light">
+              Memories
+            </div>
+            <h2 className="text-4xl font-extralight text-gray-900 mb-3 tracking-tight">
+              Board Gallery
+            </h2>
+            <p className="text-gray-500 font-light mb-10">
+              Behind the scenes with your 2026 executive board
+            </p>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {gallery.map((item, index) => (
@@ -114,7 +198,7 @@ export default function EBoardPage() {
                   className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
                   onClick={() => openLightbox(index)}
                 >
-                  {item.type === 'image' ? (
+                  {item.type === "image" ? (
                     <img
                       src={item.url}
                       alt={`Board gallery ${index + 1}`}
@@ -123,7 +207,11 @@ export default function EBoardPage() {
                     />
                   ) : (
                     <div className="relative w-full h-full bg-black">
-                      <video src={item.url} className="w-full h-full object-cover" muted />
+                      <video
+                        src={item.url}
+                        className="w-full h-full object-cover"
+                        muted
+                      />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                         <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
                           <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-gray-900 border-b-8 border-b-transparent ml-1" />
@@ -154,19 +242,25 @@ export default function EBoardPage() {
 
           <button
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
-            onClick={(e) => { e.stopPropagation(); prevItem(); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              prevItem();
+            }}
           >
             <ChevronLeft size={48} strokeWidth={1.5} />
           </button>
 
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
-            onClick={(e) => { e.stopPropagation(); nextItem(); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              nextItem();
+            }}
           >
             <ChevronRight size={48} strokeWidth={1.5} />
           </button>
 
-          {selectedItem.type === 'image' ? (
+          {selectedItem.type === "image" ? (
             <img
               src={selectedItem.url}
               alt="Gallery"

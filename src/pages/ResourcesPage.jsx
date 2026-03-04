@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ExternalLink, Play, ChevronDown } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function ResourcesPage() {
   const [slidesExpanded, setSlidesExpanded] = useState(false);
@@ -12,28 +13,23 @@ export default function ResourcesPage() {
   const faqs = [
     {
       q: "Can AIS help me find permanent accomodation and/or roommates?",
-      a:
-        "AIS is a student run organization, and it is not possible for us to make judgement on the various accommodation options available to students. Nor is it within our capacity to link students who we think will have similar interests so that they maybe roommates. Such decisions are best left to your judgement. You may post any queries you have on the Facebook groups and seniors who have an idea about the area, or other people looking for accommodation will be able to help you out.",
+      a: "AIS is a student run organization, and it is not possible for us to make judgement on the various accommodation options available to students. Nor is it within our capacity to link students who we think will have similar interests so that they maybe roommates. Such decisions are best left to your judgement. You may post any queries you have on the Facebook groups and seniors who have an idea about the area, or other people looking for accommodation will be able to help you out.",
     },
     {
       q: "How do I apply for on campus jobs?",
-      a:
-        "Job postings are put up on the ConnectSC website. Once you are on campus, you can apply to cafe jobs, or to other departments by approaching them with your resume. Apart from that, if you are looking for something technical, you could also contact your department or check the opportunities available in any of the research labs linked with USC.",
+      a: "Job postings are put up on the ConnectSC website. Once you are on campus, you can apply to cafe jobs, or to other departments by approaching them with your resume. Apart from that, if you are looking for something technical, you could also contact your department or check the opportunities available in any of the research labs linked with USC.",
     },
     {
       q: "What is the cost of event tickets?",
-      a:
-        "Ticket prices vary by event, typically ranging from $5 to $20 for members. Gate pricing may differ. We strive to keep events accessible to all students.",
+      a: "Ticket prices vary by event, typically ranging from $5 to $20 for members. Gate pricing may differ. We strive to keep events accessible to all students.",
     },
     {
       q: "How do I look for apartment?",
-      a:
-        "Ask everyone you know. Ask the people you are staying with. Look for 'Now Leasing' banners in front of the apartments. They usually have a number written, which you can call up. (Do not hesitate to call or leave a message)",
+      a: "Ask everyone you know. Ask the people you are staying with. Look for 'Now Leasing' banners in front of the apartments. They usually have a number written, which you can call up. (Do not hesitate to call or leave a message)",
     },
     {
       q: "What are some skills that might be helpful in finding a part-time job?",
-      a:
-        "Here are some of the software tools, knowledge of which should help you find on-campus jobs- Microsoft Office Suite (Word, Power Point, Excel), Microsoft Access, Microsoft Outlook, Final Cut Pro and Adobe Photoshop. Even if you are not familiar with some of these, look out for tutorials on the internet which will give you a fair idea of how to use them. Almost all non-technical jobs require good communication skills. A resume drafted specially for on-campus jobs is desirable. This resume is totally different from your professional resume. Here, most importantly, add your availability schedule for the current semester. For example – Monday- 7am to 12pm, 4pm-8pm Tuesday- 7am-12pm, 3pm-6pm… Many employers will observe this before looking at the rest of your resume! Next, add the list of software tools which you're familiar with. Put in some instances of your experience that will highlight your skills as a team player and team leader. You can also include co-curricular extracurricular activities during your undergraduate years. Remember not to make it too technical. You can also create two different resumes for technical and non-technical jobs.",
+      a: "Here are some of the software tools, knowledge of which should help you find on-campus jobs- Microsoft Office Suite (Word, Power Point, Excel), Microsoft Access, Microsoft Outlook, Final Cut Pro and Adobe Photoshop. Even if you are not familiar with some of these, look out for tutorials on the internet which will give you a fair idea of how to use them. Almost all non-technical jobs require good communication skills. A resume drafted specially for on-campus jobs is desirable. This resume is totally different from your professional resume. Here, most importantly, add your availability schedule for the current semester. For example – Monday- 7am to 12pm, 4pm-8pm Tuesday- 7am-12pm, 3pm-6pm… Many employers will observe this before looking at the rest of your resume! Next, add the list of software tools which you're familiar with. Put in some instances of your experience that will highlight your skills as a team player and team leader. You can also include co-curricular extracurricular activities during your undergraduate years. Remember not to make it too technical. You can also create two different resumes for technical and non-technical jobs.",
     },
   ];
 
@@ -57,6 +53,41 @@ export default function ResourcesPage() {
 
   return (
     <main className="pt-24 bg-white">
+      <Helmet>
+        <title>Resources & Orientation | AIS USC</title>
+        <meta
+          name="description"
+          content="New to USC? AIS USC provides orientation resources, FAQs, and helpful links to help Indian students settle in at the University of Southern California."
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Resources & Orientation | AIS USC" />
+        <meta
+          property="og:description"
+          content="New to USC? AIS USC provides orientation resources, FAQs, and helpful links to help Indian students settle in at the University of Southern California."
+        />
+        <meta
+          property="og:image"
+          content="https://www.aisusc.com/ais_logo_png.png"
+        />
+        <meta property="og:url" content="https://www.aisusc.com/resources" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Resources & Orientation | AIS USC"
+        />
+        <meta
+          name="twitter:description"
+          content="New to USC? AIS USC provides orientation resources, FAQs, and helpful links to help Indian students settle in at USC."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.aisusc.com/ais_logo_png.png"
+        />
+      </Helmet>
       {/* ── Orientation Section ── */}
       <section className="px-6 py-16 border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
@@ -86,7 +117,9 @@ export default function ResourcesPage() {
                 <p className="text-xs uppercase tracking-widest text-gray-400 mb-1 !no-underline">
                   Watch Recording
                 </p>
-                <p className="text-lg font-light !no-underline">AIS Orientation Session</p>
+                <p className="text-lg font-light !no-underline">
+                  AIS Orientation Session
+                </p>
                 <p className="text-sm text-gray-400 font-light mt-0.5 !no-underline">
                   Full Zoom recording
                 </p>
@@ -117,7 +150,9 @@ export default function ResourcesPage() {
                 <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">
                   Slide Deck
                 </p>
-                <p className="text-lg font-light text-gray-900">Orientation Slides</p>
+                <p className="text-lg font-light text-gray-900">
+                  Orientation Slides
+                </p>
                 <p className="text-sm text-gray-400 font-light mt-0.5">
                   40 slides · Click to {slidesExpanded ? "collapse" : "view"}
                 </p>
@@ -154,7 +189,9 @@ export default function ResourcesPage() {
                   <p className="font-light text-sm">
                     Paste your Google Slides embed URL in ResourcesPage.jsx
                   </p>
-                  <p className="text-xs text-gray-300">File → Share → Publish to web → Embed</p>
+                  <p className="text-xs text-gray-300">
+                    File → Share → Publish to web → Embed
+                  </p>
                 </div>
               ) : (
                 <iframe
@@ -177,13 +214,15 @@ export default function ResourcesPage() {
             <div className="text-xs tracking-widest uppercase text-gray-500 mb-3 font-light">
               Information
             </div>
-            <h1 className="text-5xl font-light">Frequently Asked Questions</h1>
+            <h2 className="text-5xl font-light">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-8">
             {faqs.map((f, i) => (
               <div key={i} className="border-b border-gray-200 pb-8">
                 <h3 className="text-xl font-light mb-3">{f.q}</h3>
-                <p className="text-gray-600 font-light leading-relaxed">{f.a}</p>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {f.a}
+                </p>
               </div>
             ))}
           </div>
@@ -213,7 +252,9 @@ export default function ResourcesPage() {
                     className="text-gray-400 group-hover:text-gray-600 transition-colors"
                   />
                 </h3>
-                <p className="text-gray-600 font-light leading-relaxed">{link.description}</p>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {link.description}
+                </p>
               </div>
             ))}
           </div>

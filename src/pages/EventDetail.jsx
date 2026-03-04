@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Calendar, MapPin, ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  ArrowLeft,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import holiImg from "../assets/img7.jpg";
 import diwaliImg from "../assets/img2.jpg";
 import garbhaImg from "../assets/img6.jpg";
 import ganeshaImg from "../assets/img5.svg";
+import { Helmet } from "react-helmet-async";
 
 // Event data
 const eventsData = {
@@ -23,8 +31,8 @@ const eventsData = {
       "10+ cultural performances and dance acts",
       "Authentic Indian cuisine from 5 different regions",
       "Grand fireworks display",
-      "Rangoli and Henna art stations"
-    ]
+      "Rangoli and Henna art stations",
+    ],
   },
   holi: {
     name: "Holi",
@@ -41,8 +49,8 @@ const eventsData = {
       "Authentic Holi delicacies - gujiya, thandai, and more",
       "Multiple color zones and water play areas",
       "Cultural presentation on Holi traditions",
-      "Photo booth with traditional Holi backdrops"
-    ]
+      "Photo booth with traditional Holi backdrops",
+    ],
   },
   "ganesha-chaturthi": {
     name: "Ganesha Chaturthi",
@@ -59,8 +67,8 @@ const eventsData = {
       "Modak-making workshop and cooking demonstrations",
       "Eco-friendly idol awareness and sustainability focus",
       "Cultural storytelling sessions",
-      "Grand aarti ceremony with 800+ attendees"
-    ]
+      "Grand aarti ceremony with 800+ attendees",
+    ],
   },
   "navratri-garba": {
     name: "Navratri & Garba Night",
@@ -77,45 +85,51 @@ const eventsData = {
       "4+ hours of non-stop dancing",
       "Traditional and contemporary music fusion",
       "Best dressed competition with prizes",
-      "Authentic Gujarati snacks and refreshments"
-    ]
-  }
+      "Authentic Gujarati snacks and refreshments",
+    ],
+  },
 };
 
 // Function to load gallery images dynamically
 function loadGalleryImages(folderName) {
   // Import all image files
-  const imageModules = import.meta.glob('/public/gallery/**/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}', { eager: true, as: 'url' });
-  
+  const imageModules = import.meta.glob(
+    "/public/gallery/**/*.{jpg,jpeg,png,gif,webp,JPG,JPEG,PNG,GIF,WEBP}",
+    { eager: true, as: "url" },
+  );
+
   // Import all video files
-  const videoModules = import.meta.glob('/public/gallery/**/*.{mp4,mov,avi,MP4,MOV,AVI}', { eager: true, as: 'url' });
-  
+  const videoModules = import.meta.glob(
+    "/public/gallery/**/*.{mp4,mov,avi,MP4,MOV,AVI}",
+    { eager: true, as: "url" },
+  );
+
   const items = [];
-  
+
   // Process images
   for (const [path, url] of Object.entries(imageModules)) {
     if (path.includes(`/gallery/${folderName}/`)) {
       items.push({
         url: url,
-        type: 'image',
-        path: path
+        type: "image",
+        path: path,
       });
     }
   }
-  
+
   // Process videos
   for (const [path, url] of Object.entries(videoModules)) {
     if (path.includes(`/gallery/${folderName}/`)) {
       items.push({
         url: url,
-        type: 'video',
-        path: path
+        type: "video",
+        path: path,
       });
     }
   }
-  
+
   console.log(`Found ${items.length} items for ${folderName}:`, items);
-  
+
   return items;
 }
 
@@ -130,29 +144,35 @@ export default function EventDetail() {
 
   useEffect(() => {
     if (!event) return;
-    
+
     // Load images from the public folder
     const items = loadGalleryImages(event.galleryFolder);
-    
+
     if (items.length > 0) {
       setGallery(items);
     } else {
       // Fallback to event hero image
-      setGallery([{ 
-        url: event.image, 
-        type: 'image',
-        name: event.name 
-      }]);
+      setGallery([
+        {
+          url: event.image,
+          type: "image",
+          name: event.name,
+        },
+      ]);
     }
   }, [event]);
 
   if (!event) {
     return (
       <div className="min-h-screen flex items-center justify-center">
+        <Helmet>
+          <title>Event Not Found | AIS USC</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <div className="text-center">
           <h1 className="text-4xl font-light mb-4">Event Not Found</h1>
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
             className="px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all"
           >
             Return Home
@@ -185,19 +205,60 @@ export default function EventDetail() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Helmet>
+        <title>{event.name} | AIS USC</title>
+        <meta
+          name="description"
+          content={`${event.name} — ${event.tagline}. ${event.date} at ${event.location}. Hosted by the Association of Indian Students at USC.`}
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${event.name} | AIS USC`} />
+        <meta
+          property="og:description"
+          content={`${event.name} — ${event.tagline}. ${event.date} at ${event.location}. Hosted by the Association of Indian Students at USC.`}
+        />
+        <meta
+          property="og:image"
+          content="https://www.aisusc.com/ais_logo_png.png"
+        />
+        <meta
+          property="og:url"
+          content={`https://www.aisusc.com/events/${slug}`}
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${event.name} | AIS USC`} />
+        <meta
+          name="twitter:description"
+          content={`${event.name} — ${event.tagline}. ${event.date} at ${event.location}.`}
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.aisusc.com/ais_logo_png.png"
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={event.image} alt={event.name} className="w-full h-full object-cover" />
+          <img
+            src={event.image}
+            alt={event.name}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
           className="absolute top-8 left-8 z-20 flex items-center gap-2 text-white hover:text-gray-200 transition-colors"
         >
           <ArrowLeft size={24} />
-          <span className="text-sm uppercase tracking-wider">Back to Events</span>
+          <span className="text-sm uppercase tracking-wider">
+            Back to Events
+          </span>
         </button>
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
@@ -221,19 +282,19 @@ export default function EventDetail() {
 
           <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-10 md:p-12 shadow-2xl max-w-2xl mx-auto">
             <h1 className="text-6xl md:text-7xl font-extralight tracking-tight text-white mb-6">
-            {event.name}
-          </h1>
-          
-          <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm mb-10">
-            <span className="flex items-center gap-2">
-              <Calendar size={18} />
-              {event.date}
-            </span>
-            <span className="flex items-center gap-2">
-              <MapPin size={18} />
-              {event.location}
-            </span>
-          </div>
+              {event.name}
+            </h1>
+
+            <div className="flex flex-wrap justify-center gap-6 text-white/90 text-sm mb-10">
+              <span className="flex items-center gap-2">
+                <Calendar size={18} />
+                {event.date}
+              </span>
+              <span className="flex items-center gap-2">
+                <MapPin size={18} />
+                {event.location}
+              </span>
+            </div>
             {event.isUpcoming ? (
               <div>
                 {/* <div className="inline-block px-4 py-1.5 bg-white/20 rounded-full text-xs uppercase tracking-widest mb-6 text-white">
@@ -243,7 +304,8 @@ export default function EventDetail() {
                   Secure Your Spot Today
                 </h2> */}
                 <p className="text-white/90 font-light mb-8 leading-relaxed">
-                  Limited spots available—register now to be part of this year's {event.name}.
+                  Limited spots available—register now to be part of this year's{" "}
+                  {event.name}.
                 </p>
                 <button className="w-full px-6 py-3 text-white border text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition-all duration-300 rounded-lg rounded-full">
                   Register Now
@@ -255,7 +317,8 @@ export default function EventDetail() {
                   Stay Updated
                 </h2> */}
                 <p className="text-white/90 font-light mb-8 leading-relaxed">
-                  Join the waitlist and we'll notify you as soon as tickets are available.
+                  Join the waitlist and we'll notify you as soon as tickets are
+                  available.
                 </p>
                 <button className="w-full px-10 py-4 bg-white/90 text-gray-900 text-sm tracking-widest uppercase font-semibold hover:bg-white transition-all duration-300 rounded-full">
                   Join Waitlist
@@ -273,8 +336,11 @@ export default function EventDetail() {
               About the Event
             </h2>
             <div className="prose prose-lg max-w-none">
-              {event.description.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="text-gray-700 leading-relaxed mb-6 font-light">
+              {event.description.split("\n\n").map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-gray-700 leading-relaxed mb-6 font-light"
+                >
                   {paragraph}
                 </p>
               ))}
@@ -302,7 +368,7 @@ export default function EventDetail() {
             <p className="text-gray-600 font-light mb-8">
               Relive the memories from last year's celebration
             </p>
-            
+
             {gallery.length > 0 ? (
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {gallery.map((item, index) => (
@@ -311,7 +377,7 @@ export default function EventDetail() {
                     className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
                     onClick={() => openLightbox(index)}
                   >
-                    {item.type === 'image' ? (
+                    {item.type === "image" ? (
                       <img
                         src={item.url}
                         alt={`${event.name} gallery ${index + 1}`}
@@ -337,7 +403,9 @@ export default function EventDetail() {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-center py-10">Gallery images coming soon!</p>
+              <p className="text-gray-500 text-center py-10">
+                Gallery images coming soon!
+              </p>
             )}
           </div>
         </div>
@@ -375,7 +443,7 @@ export default function EventDetail() {
             <ChevronRight size={48} strokeWidth={1.5} />
           </button>
 
-          {selectedImage.type === 'image' ? (
+          {selectedImage.type === "image" ? (
             <img
               src={selectedImage.url}
               alt="Gallery"

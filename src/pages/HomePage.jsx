@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Calendar, MapPin, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import holiImg from "../assets/img7.jpg";
 import diwaliImg from "../assets/img2.jpg";
 import garbhaImg from "../assets/img6.jpg";
 import ganeshaImg from "../assets/img5.svg";
 import SponsorsGrid from "../components/SponsorsGrid";
+import { Helmet } from "react-helmet-async";
 
 // Import your collage
 import collage from "../assets/hero-image.png";
@@ -16,14 +23,14 @@ const testimonials = [
     name: "Dr. Yannis C. Yortsos",
     role: "Dean of USC Viterbi School of Engineering",
     text: "Every academic year the Association of Indian Students holds a number of great events that celebrate community, friendship, and Indian culture that tie as closer together while constantly opening our hearts and minds. It is wonderful to participate in these celebrations and cherish the indomitable spirit of our Indian students and friends, at Viterbi and across USC.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150"
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
   },
   {
     id: 2,
     name: "Dr. Varun Soni",
     role: "Dean of Religious Life",
-    text: "Thank you for your leadership in bringing us together at a time when we needed it most, Through your many cultural celebrations, opportunity, and events, you really created a \"home away from home\" environment right here on campus. Congratulations on a very successful year and looking forward to the next one!",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150"
+    text: 'Thank you for your leadership in bringing us together at a time when we needed it most, Through your many cultural celebrations, opportunity, and events, you really created a "home away from home" environment right here on campus. Congratulations on a very successful year and looking forward to the next one!',
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
   },
   {
     id: 3,
@@ -36,7 +43,7 @@ const testimonials = [
     name: "Sudha Kumar",
     role: "Director, USC Viterbi India Office",
     text: "Being part of the start of the journey of our graduate Indian students to USC Viterbi, It gives me great joy when I see the success of our students and their potential being realized. Do keep in touch with me, especially if you plan to return to India so that I can connect you to the Trojan family in India. I plan on following your many successes with great interest. Fight On!",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150",
   },
 ];
 
@@ -45,31 +52,34 @@ const events = [
     id: 1,
     slug: "diwali",
     name: "Diwali",
-    description: "Festival of Lights celebration with traditional performances and festivities.",
+    description:
+      "Festival of Lights celebration with traditional performances and festivities.",
     date: "Nov, 2025",
     location: "USC McCarthy Quad",
     image: diwaliImg,
-    isUpcoming: false
+    isUpcoming: false,
   },
   {
     id: 2,
     slug: "holi",
     name: "Holi",
-    description: "Festival of Colors bringing the campus together in vibrant celebration.",
+    description:
+      "Festival of Colors bringing the campus together in vibrant celebration.",
     date: "March, 2026",
     location: "USC McCarthy Quad",
     image: holiImg,
-    isUpcoming: true
+    isUpcoming: true,
   },
   {
     id: 3,
     slug: "ganesha-chaturthi",
     name: "Ganesha Chaturthi",
-    description: "Showcasing India's diverse culture through dance, music, and cuisine.",
+    description:
+      "Showcasing India's diverse culture through dance, music, and cuisine.",
     date: "August, 2026",
     location: "Bovard Auditorium",
     image: ganeshaImg,
-    isUpcoming: false
+    isUpcoming: false,
   },
   {
     id: 4,
@@ -79,8 +89,8 @@ const events = [
     date: "September, 2026",
     location: "USC McCarthy Quad",
     image: garbhaImg,
-    isUpcoming: false
-  }
+    isUpcoming: false,
+  },
 ];
 
 // Sort events to show upcoming events first
@@ -119,8 +129,42 @@ export default function AISHomepage() {
 
   return (
     <div className="bg-white">
-      {/* Indian flag gradient bar */}
+      <Helmet>
+        <title>AIS USC | Association of Indian Students at USC</title>
+        <meta
+          name="description"
+          content="AIS USC (Association of Indian Students) builds a vibrant community for Indian students at the University of Southern California."
+        />
+        <meta
+          property="og:title"
+          content={`AIS USC | Association of Indian Students at USC`}
+        />
+        <meta
+          property="og:description"
+          content={`AIS USC (Association of Indian Students) builds a vibrant community for Indian students at the University of Southern California.`}
+        />
+        <meta
+          property="og:image"
+          content={`https://www.aisusc.com/ais_logo_png.png`}
+        />
+        <meta property="og:url" content="https://www.aisusc.com/" />
+        <meta property="og:type" content="website" />
 
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="AIS USC | Association of Indian Students"
+        />
+        <meta
+          name="twitter:description"
+          content="AIS USC builds a vibrant community for Indian students at the University of Southern California."
+        />
+        <meta
+          name="twitter:image"
+          content={`https://www.aisusc.com/ais_logo_png.png`}
+        />
+      </Helmet>
+      {/* Indian flag gradient bar */}
 
       {/* Hero Section with Collage Background */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -137,10 +181,13 @@ export default function AISHomepage() {
               AIS – University of Southern California
             </p>
             <h1 className="text-5xl md:text-7xl font-extralight tracking-tight mb-8 text-white leading-tight">
-              Where Culture<br />Meets Community
+              Where Culture
+              <br />
+              Meets Community
             </h1>
             <p className="text-lg text-white/90 mb-10 font-light max-w-xl mx-auto">
-              Celebrating Indian heritage, fostering connections, and creating unforgettable experiences at USC
+              Celebrating Indian heritage, fostering connections, and creating
+              unforgettable experiences at USC
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button
@@ -186,7 +233,7 @@ export default function AISHomepage() {
               >
                 {sortedEvents.map((event) => (
                   <div key={event.id} className="w-full shrink-0 px-2">
-                    <div 
+                    <div
                       className="relative h-[450px] rounded-2xl overflow-hidden cursor-pointer group"
                       onClick={() => handleEventClick(event.slug)}
                     >
@@ -216,11 +263,11 @@ export default function AISHomepage() {
                             {event.location}
                           </span>
                         </div>
-                        <button 
+                        <button
                           onClick={(e) => e.stopPropagation()}
                           className="w-full px-6 py-3 text-white border text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition-all duration-300 rounded-lg rounded-full"
                         >
-                          {event.isUpcoming ? 'Register Now' : 'Join Waitlist'}
+                          {event.isUpcoming ? "Register Now" : "Join Waitlist"}
                         </button>
                       </div>
                     </div>
@@ -231,14 +278,21 @@ export default function AISHomepage() {
 
             {/* Simple Arrow Navigation */}
             <button
-              onClick={() => setCurrentEvent((prev) => (prev - 1 + sortedEvents.length) % sortedEvents.length)}
+              onClick={() =>
+                setCurrentEvent(
+                  (prev) =>
+                    (prev - 1 + sortedEvents.length) % sortedEvents.length,
+                )
+              }
               className="absolute left-0 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-300 z-20"
               aria-label="Previous event"
             >
               <ChevronLeft size={48} strokeWidth={1.5} />
             </button>
             <button
-              onClick={() => setCurrentEvent((prev) => (prev + 1) % sortedEvents.length)}
+              onClick={() =>
+                setCurrentEvent((prev) => (prev + 1) % sortedEvents.length)
+              }
               className="absolute right-0 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors duration-300 z-20"
               aria-label="Next event"
             >
@@ -251,8 +305,11 @@ export default function AISHomepage() {
                 <button
                   key={idx}
                   onClick={() => setCurrentEvent(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentEvent ? "bg-gray-900 w-8" : "bg-gray-300 w-1.5"
-                    }`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    idx === currentEvent
+                      ? "bg-gray-900 w-8"
+                      : "bg-gray-300 w-1.5"
+                  }`}
                 />
               ))}
             </div>
@@ -277,10 +334,11 @@ export default function AISHomepage() {
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial) => {
               // Get initials from name
-              const nameParts = testimonial.name.split(' ');
-              const initials = nameParts.length > 1
-                ? `${nameParts[0][0]}${nameParts[nameParts.length - 1][0]}`.toUpperCase()
-                : nameParts[0][0].toUpperCase();
+              const nameParts = testimonial.name.split(" ");
+              const initials =
+                nameParts.length > 1
+                  ? `${nameParts[0][0]}${nameParts[nameParts.length - 1][0]}`.toUpperCase()
+                  : nameParts[0][0].toUpperCase();
 
               return (
                 <div
@@ -295,8 +353,12 @@ export default function AISHomepage() {
                     </div>
                     <div className="flex-1">
                       <div className="mb-4">
-                        <div className="font-medium text-gray-900 text-lg">{testimonial.name}</div>
-                        <div className="text-sm text-gray-500">{testimonial.role}</div>
+                        <div className="font-medium text-gray-900 text-lg">
+                          {testimonial.name}
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          {testimonial.role}
+                        </div>
                       </div>
                       <p className="text-gray-700 font-light leading-relaxed italic">
                         "{testimonial.text}"
@@ -312,8 +374,7 @@ export default function AISHomepage() {
           </div>
         </div>
       </section>
-      <section ref={contactRef} className="py-12 bg-white">
-        </section>
+      <section ref={contactRef} className="py-12 bg-white"></section>
     </div>
   );
 }
